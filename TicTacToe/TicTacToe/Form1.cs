@@ -1,44 +1,89 @@
 ﻿using System;
-using System.Threading;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TicTacToe
 {
     public partial class Form1 : Form
     {
-        static FieldToText FTT = new FieldToText();
+        static Ki ki = new Ki();
         public Form1()
         {
             InitializeComponent();
+            button1.Tag = 1;
+            button2.Tag = 2;
+            button3.Tag = 3;
+            button4.Tag = 4;
+            button5.Tag = 5;
+            button6.Tag = 6;
+            button7.Tag = 7;
+            button8.Tag = 8;
+            button9.Tag = 9;
         }
 
         string WhichPlayer = "X";
         int PlayerOnePoints = 0;
         int PlayerTwoPoints = 0;
         bool IsWon = false;
+        bool KiOn = false;
+        string[] buttonStates = new string[9];
+       
 
         private void ButtonUpdate(string Field)
         {
-            string Textxy = $"button{Field}.Text = WhichPlayer";
-            Textxy;
+            foreach (var comp in Controls)
+            {
+                if (comp is Button)
+                {
+                    var button = ((Button)comp);
+                    if (button.Tag?.ToString() == Field)
+                    {
+                        buttonStates[Convert.ToInt32(Field)- 1] = WhichPlayer;
+                        button.Text = WhichPlayer;
+                        button.Enabled = false;
+                    }
 
+                }
+            }
 
             HasWon();
 
-            if (IsWon)
-            { }
-            else
+            if (!IsWon)
             {
-                DontWon();
+                if (IsFieldFree())
+                {
+                    NextTurn();
+                }
+                else
+                {
+                    Draw();
+
+                }
             }
         }
 
-        private void DontWon()
+        private void Draw()
+        {
+            TextBox.Text = "Draw";
+        }
+
+        private bool IsFieldFree()
+        {
+            return buttonStates.Any(s => s == null);
+        }
+
+        private void NextTurn()
         {
             if (WhichPlayer == "X")
             {
-                WhichPlayer = "Y";
-                TextBox.Text = "PlayerTwo(Y)";
+                WhichPlayer = "O";
+                TextBox.Text = "PlayerTwo(O)";
+                if (KiOn)
+                {
+                    var fieldToSet = ki.GetNextStep(buttonStates);
+                    ButtonUpdate(fieldToSet);
+                    
+                }
             }
 
             else
@@ -52,7 +97,7 @@ namespace TicTacToe
         {
             if (sender is Button)
             {
-                ButtonUpdate(((Button)sender).Text);
+                ButtonUpdate(((Button)sender).Tag.ToString());
             }
 
         }
@@ -120,7 +165,7 @@ namespace TicTacToe
             else
             {
                 PlayerTwoPoints = PlayerTwoPoints + 1;
-                textBoxY.Text = $"PlayerTwo(Y) Points = {PlayerTwoPoints}";
+                textBoxY.Text = $"PlayerTwo(O) Points = {PlayerTwoPoints}";
             }
             GameOver();
         }
@@ -141,6 +186,7 @@ namespace TicTacToe
 
         private void Buttonevange(object sender, EventArgs e)
         {
+            buttonStates = new string[buttonStates.Length];
             IsWon = false;
             WhichPlayer = "X";
             TextBox.Text = "PlayerOne(X)";
@@ -164,5 +210,21 @@ namespace TicTacToe
             button8.Text = "8";
             button9.Text = "9";
         }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            DialogResult dialogResult = MessageBox.Show("Do you want to Play against Ki?", "Tic Tac Toe", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                KiOn = true;
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                KiOn = false;
+            }
+        }
+            
+        
     }
 }
