@@ -224,7 +224,10 @@ namespace TicTacToe
                 KiOn = false;
             }
         }
-            
-        
+
+        private void Buttonrevange(object sender, EventArgs e)
+        {
+
+        }
     }
 }

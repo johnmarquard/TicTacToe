@@ -1,23 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace TicTacToe
 {
     public class Ki
     {
         public string GetNextStep(string[] buttonStates)
         {
+            int turn = 0;
             for (int i = 0; i < buttonStates.Length; i++)
             {
-                if (buttonStates[i] == null)
+                if (buttonStates[i] == "X")
                 {
-                    i = i + 1;
-                    return i.ToString();
+                    turn = turn + 1;
                 }
-                if (i == 9)
+
+                if (buttonStates[i] == "Y")
                 {
-                    i = 0;
+                    turn = turn + 1;
+                }
+
+            }
+                if (turn == 1)
+            {
+                if (buttonStates[4] == "X")
+                {
+                    return 3.ToString();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < buttonStates.Length; i++)
+                {
+                    if (buttonStates[i] == null)
+                    {
+                        i = i + 1;
+                        return i.ToString();
+                    }
+                    if (i == 9)
+                    {
+                        i = 0;
+                    }
                 }
             }
             return null;

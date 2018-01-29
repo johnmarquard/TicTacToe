@@ -181,7 +181,7 @@
             this.ButtonRevange.TabIndex = 12;
             this.ButtonRevange.Text = "Revange";
             this.ButtonRevange.UseVisualStyleBackColor = true;
-            this.ButtonRevange.Click += new System.EventHandler(this.Buttonevange);
+            this.ButtonRevange.Click += new System.EventHandler(this.Buttonrevange);
             // 
             // Form1
             // 
