@@ -6,8 +6,10 @@ namespace TicTacToe
 {
     public partial class Form1 : Form
     {
-        static Ki ki = new Ki();
-        public Form1()
+        public IKi KI { get; private set; }
+        bool PVE = MassageBoxWhichGamePlay.PlayerVsEnemy;
+
+        public Form1(IKi ki)
         {
             InitializeComponent();
             button1.Tag = 1;
@@ -19,13 +21,13 @@ namespace TicTacToe
             button7.Tag = 7;
             button8.Tag = 8;
             button9.Tag = 9;
+            KI = ki;
         }
 
         string WhichPlayer = "X";
         int PlayerOnePoints = 0;
         int PlayerTwoPoints = 0;
         bool IsWon = false;
-        bool KiOn = false;
         string[] buttonStates = new string[9];
        
 
@@ -36,13 +38,14 @@ namespace TicTacToe
                 if (comp is Button)
                 {
                     var button = ((Button)comp);
-                    if (button.Tag?.ToString() == Field)
-                    {
-                        buttonStates[Convert.ToInt32(Field)- 1] = WhichPlayer;
-                        button.Text = WhichPlayer;
-                        button.Enabled = false;
-                    }
 
+                        if (button.Tag?.ToString() == Field)
+                        {
+                            buttonStates[Convert.ToInt32(Field) - 1] = WhichPlayer;
+                            button.Text = WhichPlayer;
+                            button.Enabled = false;
+                        }
+                    
                 }
             }
 
@@ -78,9 +81,10 @@ namespace TicTacToe
             {
                 WhichPlayer = "O";
                 TextBox.Text = "PlayerTwo(O)";
-                if (KiOn)
+
+                if (PVE)
                 {
-                    var fieldToSet = ki.GetNextStep(buttonStates);
+                    var fieldToSet = KI.GetNextStep(buttonStates);
                     ButtonUpdate(fieldToSet);
                     
                 }
@@ -184,7 +188,7 @@ namespace TicTacToe
 
         }
 
-        private void Buttonevange(object sender, EventArgs e)
+        private void ButtonRevenge(object sender, EventArgs e)
         {
             buttonStates = new string[buttonStates.Length];
             IsWon = false;
@@ -199,7 +203,7 @@ namespace TicTacToe
             button7.Enabled = true;
             button8.Enabled = true;
             button9.Enabled = true;
-
+            
             button1.Text = "1";
             button2.Text = "2";
             button3.Text = "3";
@@ -209,25 +213,6 @@ namespace TicTacToe
             button7.Text = "7";
             button8.Text = "8";
             button9.Text = "9";
-        }
-
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            DialogResult dialogResult = MessageBox.Show("Do you want to Play against Ki?", "Tic Tac Toe", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                KiOn = true;
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                KiOn = false;
-            }
-        }
-
-        private void Buttonrevange(object sender, EventArgs e)
-        {
-
         }
     }
 }
