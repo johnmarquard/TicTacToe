@@ -54,6 +54,14 @@ namespace TicTacToe
             Hide();
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
