@@ -43,25 +43,18 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(622, 471);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBox1.Location = new System.Drawing.Point(311, 245);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 44);
+            this.comboBox1.Size = new System.Drawing.Size(150, 26);
             this.comboBox1.TabIndex = 0;
             // 
             // PVP
             // 
             this.PVP.AutoSize = true;
-<<<<<<< Updated upstream
             this.PVP.Cursor = System.Windows.Forms.Cursors.Default;
-            this.PVP.Location = new System.Drawing.Point(254, 360);
-            this.PVP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-=======
-            this.PVP.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PVP.Location = new System.Drawing.Point(114, 107);
->>>>>>> Stashed changes
+            this.PVP.Location = new System.Drawing.Point(152, 230);
             this.PVP.Name = "PVP";
-            this.PVP.Size = new System.Drawing.Size(27, 26);
+            this.PVP.Size = new System.Drawing.Size(14, 13);
             this.PVP.TabIndex = 1;
             this.PVP.TabStop = true;
             this.PVP.UseVisualStyleBackColor = true;
@@ -70,16 +63,10 @@
             // PvE
             // 
             this.PvE.AutoSize = true;
-<<<<<<< Updated upstream
             this.PvE.Cursor = System.Windows.Forms.Cursors.Default;
-            this.PvE.Location = new System.Drawing.Point(758, 360);
-            this.PvE.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-=======
-            this.PvE.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.PvE.Location = new System.Drawing.Point(265, 107);
->>>>>>> Stashed changes
+            this.PvE.Location = new System.Drawing.Point(414, 230);
             this.PvE.Name = "PvE";
-            this.PvE.Size = new System.Drawing.Size(27, 26);
+            this.PvE.Size = new System.Drawing.Size(14, 13);
             this.PvE.TabIndex = 2;
             this.PvE.TabStop = true;
             this.PvE.UseVisualStyleBackColor = true;
@@ -87,27 +74,21 @@
             // 
             // textBox1
             // 
-<<<<<<< Updated upstream
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(114, 396);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-=======
-            this.textBox1.Location = new System.Drawing.Point(79, 126);
->>>>>>> Stashed changes
+            this.textBox1.Location = new System.Drawing.Point(84, 249);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 54);
+            this.textBox1.Size = new System.Drawing.Size(150, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Player Vs Player";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(622, 396);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox2.Location = new System.Drawing.Point(311, 206);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(296, 54);
+            this.textBox2.Size = new System.Drawing.Size(150, 30);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Player Vs";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -115,36 +96,24 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.PvE);
-            this.groupBox1.Controls.Add(this.PVP);
             this.groupBox1.Controls.Add(this.textBox1);
-<<<<<<< Updated upstream
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(-14, -62);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox1.Size = new System.Drawing.Size(1056, 788);
-=======
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.groupBox1.Controls.Add(this.PVP);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Location = new System.Drawing.Point(-17, -36);
+            this.groupBox1.Location = new System.Drawing.Point(-34, -43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 331);
->>>>>>> Stashed changes
+            this.groupBox1.Size = new System.Drawing.Size(789, 604);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(100, 527);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Location = new System.Drawing.Point(50, 274);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(300, 77);
+            this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 6;
             this.button1.Text = "Run";
             this.button1.UseVisualStyleBackColor = true;
@@ -152,10 +121,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(608, 527);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Location = new System.Drawing.Point(345, 317);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 77);
+            this.button2.Size = new System.Drawing.Size(150, 40);
             this.button2.TabIndex = 7;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -163,23 +131,19 @@
             // 
             // MassageBoxWhichGamePlay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 694);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(504, 361);
             this.Controls.Add(this.button1);
-<<<<<<< Updated upstream
-=======
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.comboBox1);
->>>>>>> Stashed changes
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MassageBoxWhichGamePlay";
             this.Text = "Tic Tac Toe";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
